@@ -40,7 +40,7 @@ def show_sidebar():
        - 3: Moderate importance
        - 5: Strong importance
        - 7: Very strong importance
-       - 9: Extreme importance
+       - 9: Absolute importance
 
     3. **Triangular Fuzzy Numbers (TFNs)**
        - Each comparison converted to fuzzy number
