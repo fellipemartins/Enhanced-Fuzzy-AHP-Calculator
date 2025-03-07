@@ -44,15 +44,29 @@ def show_sidebar():
 
     3. **Triangular Fuzzy Numbers (TFNs)**
        - Each comparison converted to fuzzy number
+       - Each TFN is -1/+1, except 1 (--> 1, 1, 2) and 9 (--> 8, 9, 9)
        - Reciprocals use inverse TFN (1/u, 1/m, 1/l)
     """)
 
 def input_section():
     """Handle user inputs for criteria and respondents."""
-    st.title("Enhanced Fuzzy AHP Calculator")
+    st.title("Level-adjusted Fuzzy AHP Calculator")
     st.markdown("""
     This calculator implements a hierarchical Fuzzy Analytic Hierarchy Process (FAHP) 
     with improved numerical stability and advanced weighting mechanisms.
+
+    The algorithm first uses Chang's method (1996) to calculate Fuzzy AHP.
+    Then, if we have responses from non-strategic personnel (tactical, operational), a weighting scheme is applied:
+
+    Tactical:
+    - +33% for each number in the TFN under the average of each TFN numbers for strategic response
+    - -33% if over
+
+    Operational:
+    - +66% for each number in the TFN under the average of each TFN numbers for strategic response
+    - -66% if over
+
+    That's it!
     """)
 
     col1, col2 = st.columns(2)
