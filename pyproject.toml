@@ -1,0 +1,13 @@
+[project]
+name = "FAHP app"
+version = "0.1.0"
+description = "Level-adjusted FAHP app"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.3",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "streamlit>=1.43.0",
+    "xlsxwriter>=3.2.2",
+]
